@@ -11,11 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('home');
+// });
+
+//easier
+
+Route::view('/', 'home');
+
+//Route::get('/', function () {
+//  return view('contact');
+//});
+
+//easier
+
+Route::view('/contact', 'contact');
 
 
-Route::get('/', function () {
-    return view('contact');
+Route::get('blog-post/{id}', function ($id) {
+    return $id;
 });
