@@ -11,21 +11,13 @@
 |
  */
 
-//Route::get('/', function () {
-//    return view('home');
-// });
+//once you have a controller you can use the homecontroller.php file to make redirects
+//then add "controllername@pagename" to the route::get and name it "pageName"
 
-//easier
 
-Route::view('/', 'home')->name('home'); //adds a name to 'home' page in the route:list (check php artisan route:list)
+Route::get('/', 'HomeController@home')->name('home'); //adds a name to 'home' page in the route:list (check php artisan route:list)
 
-//Route::get('/', function () {
-//  return view('contact');
-//});
-
-//easier
-
-Route::view('/contact', 'contact')->name('contact'); //adds a name to 'contact' page in the route:list (check php artisan route:list)
+Route::get('/contact', 'HomeController@contact')->name('contact'); //adds a name to 'contact' page in the route:list (check php artisan route:list)
 
 Route::get('blog-post/{id}/{welcome?}', function ($id, $welcome = 1) { //laravel.test/blog-post/1(since $welcome = 1)
     $pages = [
